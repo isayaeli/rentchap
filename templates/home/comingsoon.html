@@ -1,68 +1,69 @@
 {% extends 'base.html' %}
  {% load static %}
 {% block contents %}
-    <!--Page Banner Section start-->
-    <div class="page-banner-section section"
-    style="background-image: url({% static 'images/download-bg.jpg' %})" >
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 class="page-banner-title">Our App</h1>
-                    <ul class="page-breadcrumb">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li class="active">Our App</li>
-                    </ul>
+<body style="background-color: #000; " >
+        <!--Page Banner Section start-->
+        <div class="page-banner-section section" >
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="page-banner-title">Our App</h1>
+                        <ul class="page-breadcrumb">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">Our App</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--Page Banner Section end-->
-
-        <!--Download apps section start-->
-        <div class="download-section download-section-2 section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20" style="background-image: url({% static 'images/download-bg.jpg' %})">
-            <div class="container">
-                <div class="row align-items-center">
-                   
-                    <!--Download Content start-->
-                    <div class="col-md-8 col-12 mb-30">
-                        <div class="download-content-2">
-                            <h1>Our <span>RentChap</span> App <br>Is Comming soon!</h1>
-                            <div class="buttons justify-content-start">
-                                <a href="#">
-                                    <i class="fa fa-apple"></i>
-                                    <span class="text">
-                                        <span>Coming soon on</span>
-                                        Apple Store
-                                    </span>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-android"></i>
-                                    <span class="text">
-                                        <span>Coming soon on</span>
-                                        Google Play
-                                    </span>
-                                </a>
-                                <!-- <a href="#">
-                                    <i class="fa fa-windows"></i>
-                                    <span class="text">
-                                        <span>Download form</span>
-                                        Windows Store
-                                    </span>
-                                </a> -->
+        <!--Page Banner Section end-->
+    
+            <!--Download apps section start-->
+            <div class="download-section download-section-2 section pt-10 pt-lg-40 pt-md-30 pt-sm-30 pt-xs-20 pb-30 pb-lg-20 pb-md-20 pb-sm-10 pb-xs-10" >
+                <div class="container">
+                    <div class="row align-items-center">
+                       
+                        <!--Download Content start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="download-content-2">
+                                <h1>Our <span>RentChap</span> App <br>Is Comming soon!</h1>
+                                <div class="buttons justify-content-start">
+                                    <a href="#">
+                                        <i class="fa fa-apple"></i>
+                                        <span class="text">
+                                            <span>Coming soon on</span>
+                                            Apple Store
+                                        </span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-android"></i>
+                                        <span class="text">
+                                            <span>Coming soon on</span>
+                                            Google Play
+                                        </span>
+                                    </a>
+                                    <!-- <a href="#">
+                                        <i class="fa fa-windows"></i>
+                                        <span class="text">
+                                            <span>Download form</span>
+                                            Windows Store
+                                        </span>
+                                    </a> -->
+                                </div>
                             </div>
                         </div>
+                        <!--Download Content end-->
+                        
+                        <!--Download Image Start-->
+                        <div class="col-md-5 col-12 mb-30">
+                            <div  class="download-image"><img style="height: 500px;" src="{% static 'images/phone1.png' %}" alt=""></div>
+                        </div>
+                        <!--Download Image end-->
+                        
                     </div>
-                    <!--Download Content end-->
-                    
-                    <!--Download Image Start-->
-                    <div class="col-md-4 col-12 mb-30">
-                        <div class="download-image"><img src="{% static 'images/phone1.jpg' %}" alt=""></div>
-                    </div>
-                    <!--Download Image end-->
-                    
                 </div>
             </div>
-        </div>
-        <!--Download apps section end-->
- 
+            <!--Download apps section end-->
+     
+</body>
 {% endblock contents %}
