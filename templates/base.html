@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/helper.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Modernizr JS -->
     <script src="{% static 'js/modernizr-3.js' %}"></script>
 </head>
@@ -66,7 +67,11 @@
                     <!--User start-->
                     <div class="col mr-sm-50 mr-xs-50">
                         <div class="header-user">
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}" class="user-toggle"><i class="fa fa-user mr-2"></i><span>Logout</span></a>
+                            {% else %}
                             <a href="{% url 'login' %}" class="user-toggle"><i class="pe-7s-user"></i><span>Login or Register</span></a>
+                            {% endif %}
                         </div>
                     </div>
                     <!--User end-->
