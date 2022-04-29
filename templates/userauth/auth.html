@@ -1,0 +1,106 @@
+
+    {% extends 'base.html' %}
+    {% load static %}
+    
+    {% block title %}
+    <title>RentChap | Auth</title>
+    {% endblock title %}
+    
+    {% block contents %}
+    
+    <!--Page Banner Section start-->
+    <div class="page-banner-section section" style="background-image: url({% static 'images/cta-bg.jpg' %})">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <h1 class="page-banner-title">Login or Register</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active">Login or Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Page Banner Section end-->
+
+    <!--Login & Register Section start-->
+    <div class="login-register-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-12 ml-auto mr-auto">
+                    <ul class="login-register-tab-list nav">
+                        
+                        
+                        <li><a href="#register-tab" class="active" data-toggle="tab">Register</a></li>
+                        <li>or</li>
+                        <li><a class="active" href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                    {% if form.errors %}
+                        <div id="noto" style="width: 100%;" class="justify-content-start alert alert-danger alert-dismissible fade show" role="alert">
+                            {% for field in form %}
+                                {% if field.errors %}
+                                <span >-{{ field.errors|striptags }} <br></span>
+                                {% endif %}
+                            {% endfor %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                       
+                    <div class="tab-content">
+                        <div id="register-tab" class="tab-pane show active">
+                            <form action="{% url 'register' %}" method="post">
+                                {% csrf_token %}
+                           
+                                <div class="row">
+                                    <div class="col-6 mb-30">{{ form.first_name }}</div>
+                                    <div class="col-6 mb-30">{{ form.last_name }}</div>
+                                    <div class="col-6 mb-30">{{ form.username }}</div>
+                                    <div class="col-6 mb-30">{{ form.email }}</div>
+                                    <div class="col-6 mb-30">{{ form.password1 }}</div>
+                                    <div class="col-6 mb-30">{{ form.password2 }}</div>
+                                    <!-- <div class="col-12 mb-30">
+                                        <ul>
+                                            <li><input type="checkbox" id="register_agree" required><label for="register_agree">I agree with your <a href="#">Terms & Conditions</a></label></li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <div class="col-12 mb-30">
+                                        <ul>
+                                            <li><input type="radio" name="account_type" id="register_normal" checked><label for="register_normal">Normal</label></li>
+                                            <li><input type="radio" name="account_type" id="register_agent"><label for="register_agent">Agent</label></li>
+                                            <li><input type="radio" name="account_type" id="register_agency"><label for="register_agency">Agency</label></li>
+                                        </ul>
+                                    </div> -->
+                                    <div class="col-12"><button style="width: 100%;" type="submit" class="btn rounded-pill">Register</button></div>
+                                </div>
+                            </form>
+                            <div class="row mt-5 ml-3 forgot-links">
+                                <div class="col-md-6 mt-2">
+                                    <span>Forgot password? <a class="active" href="{% url 'password_reset' %}">click here</a></span>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <span>Already Registered? <a class="active" href="{% url 'login' %}">Login here</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-top: 100px;">
+                        {% include 'includes/newsletter.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Login & Register Section end-->
+    
+    <!--Login & Register Section end-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      $('#noto').delay(5000).fadeOut('slow');
+    </script>
+    {% endblock contents %}
+    
+ 

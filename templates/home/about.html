@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>RentChap | about us</title>
+{% endblock title %}
+{% block contents %}
+
+
+
+    
+    <!--Page Banner Section start-->
+    <div class="page-banner-section section "  style="background-image: url({% static 'images/cta-bg.jpg' %})" >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="page-banner-title">About us</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active">About us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Page Banner Section end-->
+
+    <!--Welcome Khonike - Real Estate Bootstrap 4 Templatesection-->
+    <div class="animated feature-section feature-section-border-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-10">
+        <div class="container">
+            <div class="row row-25 align-items-center">
+                <!--Feature Image start-->
+                <div class="col-lg-5 col-12 order-1 order-lg-2 mb-40">
+                    <div class="feature-image"><img src="{% static 'images/feature.png' %}" alt=""></div>
+                </div>
+                <!--Feature Image end-->
+                
+                <div class="col-lg-7 col-12 order-2 order-lg-1 mb-40">
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="about-content">
+                                <h3>Welcome to <span>RentChap</span></h3>
+                                <h1>We Always Provide Best to Our Customer</h1>
+                                <p>RentChap is a your best house/room renting service available now accross the country with best services to all of our customers, we aim at making your renting experience with us easier, quicker and more enjoyable with 100% trust.</p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="pe-7s-piggy"></i>
+                                        <h4>Low Cost</h4>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-science"></i>
+                                        <h4>Modern Renting</h4>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-display1"></i>
+                                        <h4>Good Renting Experience</h4>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-phone"></i>
+                                        <h4>No middle Man</h4>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-map"></i>
+                                        <h4>Easy to Find</h4>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-shield"></i>
+                                        <h4>Reliable</h4>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--Welcome Khonike - Real Estate Bootstrap 4 Templatesection end-->
+
+    {% include 'includes/app.html' %}
+
+     <!--Services section start-->
+     <div class="service-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
+        <div class="container">
+        
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>Our Services</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row row-30 align-items-center">
+                <div class="col-lg-5 col-12 mb-30">
+                    <div class="property-slider-2">
+                        {% for data in homes %}
+                        <div class="property-2">
+                            <div class="property-inner">
+                                <a href="{% url 'single_home' data.id %}" class="image"><img src="{{ data.image.url }}" alt=""></a>
+                                <div class="content">
+                                    <h4 class="title"><a href="{% url 'single_home' data.id %}">{{ data.title }}</a></h4>
+                                    <span class="location">{{ data.location }}</span>
+                                    <h4 class="type">Rent <span>Tsh{{ data.rent}} <span>Month</span></span></h4>
+                                    <ul>
+                                        <li>{{data.bedroom}} Bed</li>
+                                        <li>{{data.bathroom}} Bath</li>
+                                        <li>{{data.parking}} Garage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-7 col-12">
+                    <div class="row row-20">
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-1.png' %}" alt=""></div>
+                                        <h4>Buy Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>With RentChap You can be able to Buy Properties with a lot options to choose, very affordable prices and with Convinience as well</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-2.png' %}" alt=""></div>
+                                        <h4>Sale Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>With RentChap You can be able to Sell your Properties with a lot options to choose, very affordable prices and with Convinience as well</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-3.png' %}" alt=""></div>
+                                        <h4>Rent Property</h4>
+                                    </div>
+                                    <div class="content">
+                                    <p>RentChap is your Modern and a Quickest way for you to rent, buy or sell an Apartment, Powered with AI technology it will help and get you what is for you.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-4.png' %}" alt=""></div>
+                                        <h4>Mortgage Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>RentChap is your Modern and a Quickest way for you to Mortgage, buy or sell an Apartment, Powered with AI technology it will help and get you what is for you.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--Services section end-->
+
+    <!--Funfact Section start-->
+    <div class="funfact-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20" 
+    style="background-image: url({% static 'images/cta-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                
+                <!--Funfact start-->
+                <div class="single-fact col-lg-3 col-6 mb-30">
+                    <div class="inner">
+                        <div class="head">
+                            <i class="pe-7s-home"></i>
+                            <h3 class="counter">854</h3>
+                        </div>
+                        <p>Complete Rentals</p>
+                    </div>
+                </div>
+                <!--Funfact end-->
+                
+                <!--Funfact start-->
+                <div class="single-fact col-lg-3 col-6 mb-30">
+                    <div class="inner">
+                        <div class="head">
+                            <i class="pe-7s-graph3"></i>
+                            <h3 class="counter">854</h3>
+                        </div>
+                        <p>Property Sold</p>
+                    </div>
+                </div>
+                <!--Funfact end-->
+                
+                <!--Funfact start-->
+                <div class="single-fact col-lg-3 col-6 mb-30">
+                    <div class="inner">
+                        <div class="head">
+                            <i class="pe-7s-users"></i>
+                            <h3 class="counter">854</h3>
+                        </div>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <!--Funfact end-->
+                
+                <!--Funfact start-->
+                <div class="single-fact col-lg-3 col-6 mb-30">
+                    <div class="inner">
+                        <div class="head">
+                            <i class="pe-7s-medal"></i>
+                            <h3 class="counter">854</h3>
+                        </div>
+                        <p>Awards Win</p>
+                    </div>
+                </div>
+                <!--Funfact end-->
+                
+            </div>
+        </div>
+    </div>
+    <!--Funfact Section end-->
+
+       <!--Agent Section start-->
+       <div class="agent-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+           
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>Our Team</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row">
+                <div class="agent-carousel section">
+                    <!--Agent satrt-->
+                    {% for data in team %}
+                    <div class="col">
+                        <div class="agent">
+                            <div class="image">
+                                <a class="img" href=""><img style="width: auto; height: 210px;" src="{{ data.image.url }}" alt=""></a>
+                                <div class="social">
+                                    <!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> -->
+                                    {% if data.twitter %}
+                                        <a href="{{ data.linkedin }}" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    {% else %}
+                                    <a type="button" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    {% endif %}
+
+                                    {% if data.linkedin %}
+                                        <a href="{{ data.twitter }}" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    {% else %}
+                                    <a type="button" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    {% endif %}
+                                    <!-- <a href="#" class="google"><i class="fa fa-google-plus"></i></a> -->
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="">{{ data.name}}</a></h4>
+                                <!-- <a href="#" class="phone">(756) 447 5779</a> -->
+                                <a href="#" class="email">{{ data.role }}</a>
+                                <!-- <span class="properties">{{ data.role }}</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--Agent end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Agent Section end-->
+
+    <!--Testimonial Section start-->
+    <div class="testimonial-section section bg-gray pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+           
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>What Client's Say</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row">
+               
+                <!--Review start-->
+                <div class="review-slider section">
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-1.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>John Carlson - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-2.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>Virginia Henry - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-3.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>Emma Romero - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-4.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>Russell Ortiz - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-5.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>Carol Palmer - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review col">
+                        <div class="review-inner">
+                            <div class="image"><img src="assets/images/review/review-6.jpg" alt=""></div>
+                            <div class="content">
+                                <p>sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit.</p>
+                                <h6>David Herrera - <span>CEO</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--Review end-->
+                
+            </div>
+        </div>
+    </div>
+    <!--Testimonial Section end-->
+    
+   <!--Brand section start-->
+   <div class="brand-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+    <div class="container">
+       
+        <!--Section Title start-->
+        <div class="row">
+            <div class="col-md-12 mb-60 mb-xs-30">
+                <div class="section-title center">
+                    <h1>Our Partners</h1>
+                </div>
+            </div>
+        </div>
+        <!--Section Title end-->
+        
+        <div class="row">
+            
+            <!--Brand Slider start-->
+            <div class="brand-carousel section">
+                <div class="brand col"><img src="{% static 'images/ennovate.png' %}" alt=""></div>
+                <!-- <div class="brand col"><img src="assets/images/brands/brand-2.png" alt=""></div>
+                <div class="brand col"><img src="assets/images/brands/brand-3.png" alt=""></div>
+                <div class="brand col"><img src="assets/images/brands/brand-4.png" alt=""></div>
+                <div class="brand col"><img src="assets/images/brands/brand-5.png" alt=""></div>
+                <div class="brand col"><img src="assets/images/brands/brand-6.png" alt=""></div> -->
+            </div>
+            <!--Brand Slider end-->
+            
+        </div>
+        
+    </div>
+</div>
+<!--Brand section end-->
+
+{% endblock contents %}

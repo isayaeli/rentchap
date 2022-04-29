@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>RentChap | properties</title>
+{% endblock title %}
+
+{% block contents %}
+
+    
+    <!--Page Banner Section start-->
+    <div class="page-banner-section section"
+    style="background-image: url({% static 'images/download-bg.jpg' %})" >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="page-banner-title">Properties</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active">Properties List</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Page Banner Section end-->
+
+
+    <!--New property section start-->
+    <div class="property-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-lg-8 col-12 order-1 mb-sm-50 mb-xs-50">
+                    <div class="row">
+
+                        <!--Property start-->
+                        {% for data in homes %}
+                        <div class="property-item list col-md-6 col-12 mb-40">
+                            <div class="property-inner">
+                                <div class="image">
+                                    <a href="{% url 'single_home' data.id %}"><img src="{{ data.image.url }}" alt=""></a>
+                                    <ul class="property-feature">
+                                        <li>
+                                            <span class="area"><img src="{% static 'images/area.png' %}" alt="">{{ data.area }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="bed"><img src="{% static 'images/bed.png' %}" alt="">{{ data.bedroom }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="bath"><img src="{% static 'images/bath.png' %}" alt="">{{ data.bathroom }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="parking"><img src="{% static 'images/parking.png' %}" alt="">{{ data.parking }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="content">
+                                    <div class="left">
+                                        <h3 class="title"><a href="{% url 'single_home' data.id %}">{{ data.title }}</a></h3>
+                                        <span class="location"><img src="{% static 'images/marker.png' %}" alt="">{{ data.location }}</span>
+                                    </div>
+                                    <div class="right">
+                                        <div class="type-wrap">
+                                            <span style="font-size: 15px;" class="price">Tsh {{ data.rent }}<span>M</span></span>
+                                            <span class="type">For {{ data.house_type }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <p>{{ data.details }}</p>
+                                    </div>
+                                    <a class="btn rounded-pill" href="{% url 'single_home' data.id %}" class="read-more">View a House</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!--Property end-->
+                    </div>
+
+                    <div class="row mt-20">
+                        <div class="col">
+                            <ul class="page-pagination">
+                                <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
+                                <li class="active"><a href="#">01</a></li>
+                                <li><a href="#">02</a></li>
+                                <li><a href="#">03</a></li>
+                                <li><a href="#">04</a></li>
+                                <li><a href="#">05</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-12 order-2 pl-30 pl-sm-15 pl-xs-15">
+                    
+                    <!--Sidebar start-->
+                    <div class="sidebar">
+                        <h4 class="sidebar-title"><span class="text">Search Property</span><span class="shape"></span></h4>
+                        
+                    
+                        <!--Property Search start-->
+                        <div class="property-search sidebar-property-search">
+
+                            <form action="#">
+
+                                <div>
+                                    <input type="text" placeholder="Location">
+                                </div>
+
+                                <div>
+                                    <select class="nice-select">
+                                        <option>All Cities</option>
+                                        <option>Athina</option>
+                                        <option>Austin</option>
+                                        <option>Baytown</option>
+                                        <option>Brampton</option>
+                                        <option>Cedar Hill</option>
+                                        <option>Chester</option>
+                                        <option>Chicago</option>
+                                        <option>Coleman</option>
+                                        <option>Corpus Christi</option>
+                                        <option>Dallas</option>
+                                        <option>distrito federal</option>
+                                        <option>Fayetteville</option>
+                                        <option>Galveston</option>
+                                        <option>Jersey City</option>
+                                        <option>Los Angeles</option>
+                                        <option>Midland</option>
+                                        <option>New York</option>
+                                        <option>Odessa</option>
+                                        <option>Reno</option>
+                                        <option>San Angelo</option>
+                                        <option>San Antonio</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select class="nice-select">
+                                        <option>For Rent</option>
+                                        <option>For Sale</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select class="nice-select">
+                                        <option>Type</option>
+                                        <option>Apartment</option>
+                                        <option>Cafe</option>
+                                        <option>House</option>
+                                        <option>Restaurant</option>
+                                        <option>Store</option>
+                                        <option>Villa</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select class="nice-select">
+                                        <option>Bedrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select class="nice-select">
+                                        <option>Bathrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <div id="search-price-range"></div>
+                                </div>
+
+                                <div>
+                                    <button class="btn rounded-pill" >search</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <!--Property Search end-->
+                        
+                    </div>
+                    <!--Sidebar end-->
+ 
+                    <!--Sidebar start-->
+                    <div class="sidebar">
+                        <h4 class="sidebar-title"><span class="text">Popular Tags</span><span class="shape"></span></h4>
+                        
+                        <!--Sidebar Tags start-->
+                        <div class="sidebar-tags">
+                            <a class="rounded-pill" href="#">Houses</a>
+                            <a class="rounded-pill" href="#">Real Home</a>
+                            <a class="rounded-pill" href="#">Baths</a>
+                            <a class="rounded-pill" href="#">Beds</a>
+                            <a class="rounded-pill" href="#">Garages</a>
+                            <a class="rounded-pill" href="#">Family</a>
+                            <a class="rounded-pill" href="#">Real Estates</a>
+                            <a class="rounded-pill" href="#">Properties</a>
+                            <a class="rounded-pill" href="#">Location</a>
+                            <a class="rounded-pill" href="#">Price</a>
+                        </div>
+                        <!--Sidebar Tags end-->
+                    
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--New property section end-->
+    
+
+{% endblock contents %}

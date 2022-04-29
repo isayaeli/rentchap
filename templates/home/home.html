@@ -1,0 +1,614 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>RentChap | home</title>
+{% endblock title %}
+
+{% block contents %}
+
+    
+    <!--slider section start-->
+    <div class="hero-section section position-relative">
+           
+        <!--Hero Item start-->
+        <div class="hero-item align-items-end">
+			<ul class="kenburns-slideshow">
+				<li><img src="{% static 'images/hero-1.jpg' %}" alt=""></li>
+				<li><img src="{% static 'images/hero-2.jpg' %}" alt=""></li>
+				<li><img src="{% static 'images/hero-3.jpg' %}" alt=""></li>
+			</ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+						<!--Property Search start-->
+						<div class="property-search hero-property-search">
+							<h1 class="title">Find Your <span>Dream</span> Home</h1>
+							<form action="#">
+
+								<div>
+									<input type="text" placeholder="Location">
+								</div>
+
+								<div>
+									<select class="nice-select">
+										<option>All Cities</option>
+										<option>Dar es salaam</option>
+										<option>Arusha</option>
+										<option>Tanga</option>
+										<option>Kilimanjaro</option>
+										<option>Pwani</option>
+										<option>Singida</option>
+										<option>Doodoma</option>
+										<option>Tabora</option>
+										<option>Mwanza</option>
+										<option>Shinyaga</option>
+										<option>Mbeya</option>
+										<option>Iringa</option>
+										<option>Morogoro</option>
+									</select>
+								</div>
+
+								<div>
+									<select class="nice-select">
+										<option>For Rent</option>
+										<option>For Sale</option>
+									</select>
+								</div>
+
+								<div>
+									<select class="nice-select">
+										<option>Type</option>
+										<option>Apartment</option>
+										<option>Cafe</option>
+										<option>House</option>
+										<option>Restaurant</option>
+										<option>Store</option>
+										<option>Villa</option>
+									</select>
+								</div>
+
+								<div>
+									<select class="nice-select">
+										<option>Bedrooms</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+									</select>
+								</div>
+
+								<div>
+									<select class="nice-select">
+										<option>Bathrooms</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+									</select>
+								</div>
+
+								<div>
+									<div id="search-price-range"></div>
+								</div>
+
+								<div>
+									<button style="width: 100%;" class="btn rounded-pill " >search</button>
+								</div>
+
+							</form>
+
+						</div><!--Property Search end-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Item end-->
+        
+    </div>
+    <!--slider section end-->
+
+    <!--Welcome Khonike - Real Estate Bootstrap 4 Templatesection-->
+    <div class="feature-section feature-section-border-bottom section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-20 pb-20 pb-lg-20 pb-md-20 pb-sm-10 pb-xs-10">
+        <div class="container">
+            <div class="row">
+                       
+				<!--Feature start-->
+				<div class="col-lg-3 col-sm-6 col-12 mb-30">
+					<div class="feature-2">
+						<div class="icon"><i class="pe-7s-piggy"></i></div>
+						<div class="content">
+							<h4>Low Cost</h4>
+							<p>ed do eiusmod tempor dolor sit amet, conse elit ctetur sed tempor.</p>
+						</div>
+					</div>
+				</div>
+				<!--Feature end-->
+
+				<!--Feature start-->
+				<div class="col-lg-3 col-sm-6 col-12 mb-30">
+					<div class="feature-2">
+						<div class="icon"><i class="pe-7s-call"></i></div>
+						<div class="content">
+							<h4>Talk To Owner</h4>
+							<p>ed do eiusmod tempor dolor sit amet, conse elit ctetur sed tempor.</p>
+						</div>
+					</div>
+				</div>
+				<!--Feature end-->
+
+				<!--Feature start-->
+				<div class="col-lg-3 col-sm-6 col-12 mb-30">
+					<div class="feature-2">
+						<div class="icon"><i class="pe-7s-map-2"></i></div>
+						<div class="content">
+							<h4>Easy to Find</h4>
+							<p>ed do eiusmod tempor dolor sit amet, conse elit ctetur sed tempor.</p>
+						</div>
+					</div>
+				</div>
+				<!--Feature end-->
+
+				<!--Feature start-->
+				<div class="col-lg-3 col-sm-6 col-12 mb-30">
+					<div class="feature-2">
+						<div class="icon"><i class="pe-7s-anchor"></i></div>
+						<div class="content">
+							<h4>Reliable</h4>
+							<p>ed do eiusmod tempor dolor sit amet, conse elit ctetur sed tempor.</p>
+						</div>
+					</div>
+				</div>
+				<!--Feature end-->
+                
+            </div>
+        </div>
+    </div>
+    <!--Welcome Khonike - Real Estate Bootstrap 4 Templatesection end-->
+
+    <!--Feature property section start-->
+    <div class="property-section section pt-20 pt-lg-50 pt-md-30 pt-sm-60 pt-xs-50 pb-10 pb-lg-10 pb-md-10 pb-sm-10 pb-xs-10">
+        <div class="container">
+            
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-10 mb-xs-10">
+                    <div class="section-title center">
+                        <h1>Feature Property</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row">
+                <!--Property Slider start-->
+                <div class="property-carousel section">
+                        <!--Property start-->
+                        {% for data in homes %}
+                        <div class="property-item col">
+                            <div class="property-inner">
+                                <div class="image">
+                                    <a href="{% url 'single_home' data.id %}"><img src="{{ data.image.url }}" alt=""></a>
+                                    <ul class="property-feature">
+                                        <li>
+                                            <span class="area"><img src="{% static 'images/area.png' %}" alt="">{{ data.area }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="bed"><img src="{% static 'images/bed.png' %}" alt="">{{ data.bedroom }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="bath"><img src="{% static 'images/bath.png' %}" alt="">{{ data.bathroom }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="parking"><img src="{% static 'images/parking.png' %}" alt="">{{ data.parking }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="content">
+                                    <div class="left">
+                                        <h3 class="title"><a href="{% url 'single_home' data.id %}">{{ data.title }}</a></h3>
+                                        <span class="location"><img src="{% static 'images/marker.png' %}" alt="">{{ data.location }}</span>
+                                    </div>
+                                    <div class="right">
+                                        <div class="type-wrap">
+                                            <span style="font-size: 15px;" class="price">Tsh {{ data.rent }}<span>M</span></span>
+                                            <span class="type">For {{ data.home_type }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!--Property end-->
+                </div>
+                <!--Property Slider end-->
+                
+            </div>
+            
+        </div>
+    </div>
+    <!--Feature property section end-->
+
+
+
+    <!--Services section start-->
+    <div class="service-section section pt-50 pt-lg-40 pt-md-30 pt-sm-30 pt-xs-20 pb-30 pb-lg-30 pb-md-30 pb-sm-10 pb-xs-10">
+        <div class="container">
+        
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-30 mb-xs-10">
+                    <div class="section-title center">
+                        <h1>Our Services</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row row-30 align-items-center">
+                <div class="col-lg-5 col-12 mb-30">
+                    <div class="property-slider-2">
+                        {% for data in homes %}
+                        <div class="property-2">
+                            <div class="property-inner">
+                                <a href="{% url 'single_home' data.id %}" class="image"><img src="{{ data.image.url }}" alt=""></a>
+                                <div class="content">
+                                    <h4 class="title"><a href="{% url 'single_home' data.id %}">{{ data.title }}</a></h4>
+                                    <span class="location">{{ data.location }}</span>
+                                    <h4 class="type">Rent <span>Tsh{{ data.rent}} <span>Month</span></span></h4>
+                                    <ul>
+                                        <li>{{data.bedroom}} Bed</li>
+                                        <li>{{data.bathroom}} Bath</li>
+                                        <li>{{data.parking}} Garage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="property-2">
+                            <div class="property-inner">
+                                <a href="single-properties.html" class="image"><img src="{% static 'images/property-13.jpg' %}" alt=""></a>
+                                <div class="content">
+                                    <h4 class="title"><a href="single-properties.html">Marvel de Villa</a></h4>
+                                    <span class="location">450 E 1st Ave, New Jersey</span>
+                                    <h4 class="type">Rent <span>$550 <span>Month</span></span></h4>
+                                    <ul>
+                                        <li>6 Bed</li>
+                                        <li>4 Bath</li>
+                                        <li>3 Garage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-7 col-12">
+                    <div class="row row-20">
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-1.png' %}" alt=""></div>
+                                        <h4>Buy Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>With RentChap You can be able to Buy Properties with a lot options to choose, very affordable prices and with Convinience as well</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-2.png' %}" alt=""></div>
+                                        <h4>Sale Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>With RentChap You can be able to Sell your Properties with a lot options to choose, very affordable prices and with Convinience as well</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-3.png' %}" alt=""></div>
+                                        <h4>Rent Property</h4>
+                                    </div>
+                                    <div class="content">
+                                    <p>RentChap is your Modern and a Quickest way for you to rent, buy or sell an Apartment, Powered with AI technology it will help and get you what is for you.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                        <!--Service start-->
+                        <div class="col-md-6 col-12 mb-30">
+                            <div class="service">
+                                <div class="service-inner">
+                                    <div class="head">
+                                        <div class="icon"><img src="{% static 'images/service-4.png' %}" alt=""></div>
+                                        <h4>Mortgage Property</h4>
+                                    </div>
+                                    <div class="content">
+                                        <p>RentChap is your Modern and a Quickest way for you to Mortgage, buy or sell an Apartment, Powered with AI technology it will help and get you what is for you.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Service end-->
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--Services section end-->
+
+    <!--New property section start-->
+    <div class="property-section section pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-10">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>Newly Added Homes</h1>
+                    </div>
+                </div>
+            </div>
+     
+            
+            <div class="row">
+               
+              
+               {% for data in homes %}
+               <div class="property-item col-lg-4 col-md-6 col-12 mb-40">
+                <div class="property-inner">
+                    <div class="image">
+                        <a href="{% url 'single_home' data.id %}"><img src="{{ data.image.url }}" alt=""></a>
+                        <ul class="property-feature">
+                            <li>
+                                <span class="area"><img src="{% static 'images/area.png' %}" alt="">{{ data.area }}</span>
+                            </li>
+                            <li>
+                                <span class="bed"><img src="{% static 'images/bed.png' %}" alt="">{{ data.bedroom }}</span>
+                            </li>
+                            <li>
+                                <span class="bath"><img src="{% static 'images/bath.png' %}" alt="">{{ data.bathroom }}</span>
+                            </li>
+                            <li>
+                                <span class="parking"><img src="{% static 'images/parking.png' %}" alt="">{{ data.bedroom }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <h3 class="title"><a href="{% url 'single_home' data.id %}">{{ data.title }}</a></h3>
+                            <span class="location"><img src="{% static 'images/marker.png' %}" alt="">{{ data.location }}</span>
+                        </div>
+                        <div class="right">
+                            <div class="type-wrap">
+                                <span style="font-size: 15px;" class="price">Tsh {{ data.rent }}<span>M</span></span>
+                                <span class="type">For {{ data.house_type }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          
+               
+                
+            </div>
+            
+        </div>
+    </div>
+    <!--New property section end-->
+
+    <!--CTA Section start-->
+    <div class="cta-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50" style="background-image: url({% static 'images/cta-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    
+                    <!--CTA start-->
+                    <div class="cta-content text-center">
+                        <h1>Want to <span>Buy, Rent</span> New Apartment or <span>Sell</span> One <br> Do it in Seconds With <span>RentChap</span></h1>
+                        <div class="buttons">
+                            <a class="rounded-pill" href="#">Add Property</a>
+                        <a class="rounded-pill" href="{% url 'homes' %}">Browse Properties</a>
+                        </div>
+                    </div>
+                    <!--CTA end-->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CTA Section end-->
+
+
+    <!--News Section start-->
+    <div class="news-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+           
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>Latest News</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row">
+                <div class="news-carousel section">
+
+                    <!--News start-->
+                    <div class="col">
+                        <div class="news">
+                            <div class="image">
+                                <a href="news-details.html"><img src="assets/images/news/news-1.jpg" alt=""></a>
+                                <div class="meta-wrap">
+                                    <ul class="meta">
+                                        <li>By <a href="#">Donald</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                    <ul class="meta back">
+                                        <li>By <a href="#">Donald</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="news-details.html">Duplex Villa with Altra Concept</a></h4>
+                                <div class="desc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae suscip</p>
+                                </div>
+                                <a href="news-details.html" class="readmore">Continure Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News end-->
+
+                    <!--News start-->
+                    <div class="col">
+                        <div class="news">
+                            <div class="image">
+                                <a href="news-details.html"><img src="assets/images/news/news-2.jpg" alt=""></a>
+                                <div class="meta-wrap">
+                                    <ul class="meta">
+                                        <li>By <a href="#">Donald</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                    <ul class="meta back">
+                                        <li>By <a href="#">Donald</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="news-details.html">Joint Mortgage: Pros vs. Cons</a></h4>
+                                <div class="desc">
+                                    <p>Khonike - Real Estate Bootstrap 4 Template the best theme for  elit, sed do to eiumod tempor dolor sit amet.</p>
+                                </div>
+                                <a href="news-details.html" class="readmore">Continure Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News end-->
+
+                    <!--News start-->
+                    <div class="col">
+                        <div class="news">
+                            <div class="image">
+                                <a href="news-details.html"><img src="assets/images/news/news-3.jpg" alt=""></a>
+                                <div class="meta-wrap">
+                                    <ul class="meta">
+                                        <li>By <a href="#">Sean</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                    <ul class="meta back">
+                                        <li>By <a href="#">Sean</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="news-details.html">Dealing with Student Loan Debt</a></h4>
+                                <div class="desc">
+                                    <p>Khonike - Real Estate Bootstrap 4 Template the best theme for  elit, sed do to eiumod tempor dolor sit amet.</p>
+                                </div>
+                                <a href="news-details.html" class="readmore">Continure Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News end-->
+
+                    <!--News start-->
+                    <div class="col">
+                        <div class="news">
+                            <div class="image">
+                                <a href="news-details.html"><img src="assets/images/news/news-4.jpg" alt=""></a>
+                                <div class="meta-wrap">
+                                    <ul class="meta">
+                                        <li>By <a href="#">Sean</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                    <ul class="meta back">
+                                        <li>By <a href="#">Sean</a></li>
+                                        <li>September 30, 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="news-details.html">Bridging the home ownership gap</a></h4>
+                                <div class="desc">
+                                    <p>Khonike - Real Estate Bootstrap 4 Template the best theme for  elit, sed do to eiumod tempor dolor sit amet.</p>
+                                </div>
+                                <a href="news-details.html" class="readmore">Continure Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--News end-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--News Section end-->
+    
+    <!--Brand section start-->
+    <div class="brand-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+        <div class="container">
+           
+            <!--Section Title start-->
+            <div class="row">
+                <div class="col-md-12 mb-60 mb-xs-30">
+                    <div class="section-title center">
+                        <h1>Our Partners</h1>
+                    </div>
+                </div>
+            </div>
+            <!--Section Title end-->
+            
+            <div class="row">
+                
+                <!--Brand Slider start-->
+                <div class="brand-carousel section">
+                    <div class="brand col"><img src="{% static 'images/ennovate.png' %}" alt=""></div>
+                    <!-- <div class="brand col"><img src="assets/images/brands/brand-2.png" alt=""></div>
+                    <div class="brand col"><img src="assets/images/brands/brand-3.png" alt=""></div>
+                    <div class="brand col"><img src="assets/images/brands/brand-4.png" alt=""></div>
+                    <div class="brand col"><img src="assets/images/brands/brand-5.png" alt=""></div>
+                    <div class="brand col"><img src="assets/images/brands/brand-6.png" alt=""></div> -->
+                </div>
+                <!--Brand Slider end-->
+                
+            </div>
+            
+        </div>
+    </div>
+    <!--Brand section end-->
+    
+{% endblock contents %}
